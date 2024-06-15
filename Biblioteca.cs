@@ -180,7 +180,7 @@ namespace AtCSharp03
 
             for (int i=0; i < Itens.Count; i++)
             {
-                if (Itens[i].Titulo == empresta)
+                if (Itens[i].Titulo.ToLower() == empresta.ToLower())
                 {
                     Console.Clear();
                     RealizarEmprestimo(Itens[i]);
@@ -198,9 +198,52 @@ namespace AtCSharp03
             Console.ReadKey();
         }
 
-        public void RealizarEmprestimo (ItemBiblioteca item)
+        void RealizarEmprestimo (ItemBiblioteca item)
         {
             item.Emprestar();
+        }
+
+        public void MenuRealizarDevolucao ()
+        {
+            // mostra lista
+            Console.Clear();
+            Console.WriteLine("Livros e Revistas a serem devolvidos:\n");
+            foreach (ItemBiblioteca item in Itens)
+            {
+                // Mostra somente livros ou revistas que precisão ser devolvidos
+                if (item.Emprestado)
+                {
+                    Console.WriteLine(item.ExibirInformacoes());
+                }
+            }
+
+            Console.Write("\nDigite o livrou ou revista a ser devolvido: ");
+            string devolver = Console.ReadLine();
+            bool devolvido = false;
+
+            for (int i=0; i < Itens.Count; i++)
+            {
+                if (Itens[i].Titulo.ToLower() == devolver.ToLower())
+                {
+                    Console.Clear();
+                    RealizarDevolucao(Itens[i]);
+                    devolvido = true;
+                }
+            }
+
+            // aviso caso não localize o livro ou revista
+            if (!devolvido)
+            {
+                Console.Clear();
+                Console.WriteLine($"'{devolver}' não localizado, verifique e tente novamente.");
+            }
+
+            Console.ReadKey();
+        }
+
+        void RealizarDevolucao (ItemBiblioteca item)
+        {
+            item.Devolver();
         }
     }
 }
