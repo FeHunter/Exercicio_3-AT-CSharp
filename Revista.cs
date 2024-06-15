@@ -23,7 +23,7 @@ namespace AtCSharp03
 
         public override string ExibirInformacoes()
         {
-            return $"Revista: {Titulo} \nAutor: {Autor} \nAno de publicação: {Ano} \n";
+            return $"Revista: {Titulo} \nAutor: {Autor} \nAno de publicação: {Ano} \n Disponivel: {(!Emprestado ? "Sim" : "Não")}";
         }
 
         public override void VerificarDisponibilidade()
