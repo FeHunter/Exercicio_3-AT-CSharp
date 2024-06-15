@@ -1,6 +1,6 @@
 namespace AtCSharp03
 {
-    abstract class ItemBiblioteca
+    abstract class ItemBiblioteca : IEmprestavel
     {
         private string _titulo;
         private string _autor;
@@ -13,5 +13,7 @@ namespace AtCSharp03
         public abstract void Emprestar();
         public abstract void Devolver();
         public abstract void ExibirInformacoes();
+        public virtual void VerificarDisponibilidade() {}
+        public virtual void ObterPrazoDeDevolucao() {}
     }
 }
