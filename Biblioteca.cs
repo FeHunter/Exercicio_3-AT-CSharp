@@ -8,7 +8,7 @@ namespace AtCSharp03
 
         internal List<ItemBiblioteca> Itens { get => _itens; set => _itens = value; }
 
-        public int Menu ()
+        public int EscolherOpcoes ()
         {
             Console.WriteLine("1 - Adicionar Livro");
             Console.WriteLine("2 - Adicionar Revista");
@@ -19,9 +19,9 @@ namespace AtCSharp03
             return op;
         }
 
-        public void AdicionarItem ()
+        public void MenuAdicionarItem ()
         {
-            int op = Menu();
+            int op = EscolherOpcoes();
             if (op == 1)
             {
                 Console.WriteLine("Adicionar Livro");
@@ -33,7 +33,7 @@ namespace AtCSharp03
                 int ano = int.Parse(Console.ReadLine());
 
                 Livro livro = new Livro(titulo, autor, ano);
-                Itens.Add(livro);
+                AdicionarItem(livro);
             }
             else if (op == 2)
             {
@@ -46,8 +46,13 @@ namespace AtCSharp03
                 int ano = int.Parse(Console.ReadLine());
 
                 Revista revista = new Revista(titulo, autor, ano);
-                Itens.Add(revista);
+                AdicionarItem(revista);
             }
+        }
+
+        public void AdicionarItem (ItemBiblioteca item)
+        {
+            Itens.Add(item);
         }
     }
 }
