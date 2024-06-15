@@ -14,13 +14,11 @@ namespace AtCSharp03
         public bool Emprestado { get => _emprestado; set => _emprestado = value; }
         public DateTime PrazoDevolucao { get => _prazoDevolucao; set => _prazoDevolucao = value; }
 
-        public ItemBiblioteca(string titulo, string autor, int ano, bool emprestado, DateTime prazoDevolucao)
+        public ItemBiblioteca(string titulo, string autor, int ano)
         {
             Titulo = titulo;
             Autor = autor;
             Ano = ano;
-            Emprestado = emprestado;
-            PrazoDevolucao = prazoDevolucao;
         }
 
         public abstract void Emprestar();

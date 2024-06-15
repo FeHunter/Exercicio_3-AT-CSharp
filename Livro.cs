@@ -3,7 +3,7 @@ namespace AtCSharp03
 {
     class Livro : ItemBiblioteca
     {
-        public Livro(string titulo, string autor, int ano, bool emprestado, DateTime prazoDevolucao) : base(titulo, autor, ano, emprestado, prazoDevolucao)
+        public Livro(string titulo, string autor, int ano) : base(titulo, autor, ano)
         {
         }
 
