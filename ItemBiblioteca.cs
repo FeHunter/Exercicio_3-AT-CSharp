@@ -22,10 +22,18 @@ namespace AtCSharp03
             Autor = autor;
             Ano = ano;
         }
+        public ItemBiblioteca(string titulo, string autor, int ano, bool emprestado)
+        {
+            Titulo = titulo;
+            Autor = autor;
+            Ano = ano;
+            Emprestado = emprestado;
+        }
 
         public abstract void Emprestar();
         public abstract void Devolver();
         public abstract string ExibirInformacoes();
+        public abstract string FormatarParaSalvar();
         public virtual void VerificarDisponibilidade() {}
         public virtual void ObterPrazoDeDevolucao() {}
     }

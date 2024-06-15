@@ -7,6 +7,10 @@ namespace AtCSharp03
         {
             Tipo = "revista";
         }
+        public Revista(string titulo, string autor, int ano, bool emprestado) : base(titulo, autor, ano, emprestado)
+        {
+            Tipo = "revista";
+        }
 
         public override void Devolver()
         {
@@ -31,6 +35,11 @@ namespace AtCSharp03
         public override string ExibirInformacoes()
         {
             return $"Revista: {Titulo} \nAutor: {Autor} \nAno de publicação: {Ano} \nDisponivel: {(!Emprestado ? "Sim" : "Não")} \n";
+        }
+
+        public override string FormatarParaSalvar()
+        {
+            return $"{Tipo}, {Titulo}, {Autor}, {Ano}, {(!Emprestado ? "Sim" : "Não")}";
         }
 
         public override void VerificarDisponibilidade()
