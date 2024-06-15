@@ -39,11 +39,26 @@ namespace AtCSharp03
                 }
                 else if (op == 6)
                 {
-                    SalvarDadosEmCsv(biblioteca, path);
-                }
-                else if (op == 7)
-                {
                     fim = true;
+                }
+            }
+
+            // salvar dados antes de finalizar
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                try
+                {
+                    foreach(ItemBiblioteca item in biblioteca.Itens)
+                    {
+                        sw.WriteLine(item.FormatarParaSalvar());
+                        Console.Clear();
+                        Console.WriteLine("Os dados foram salvos.");
+                        Console.ReadKey();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Erro: {e.Message}. Tente novamente mais tarde");
                 }
             }
         }
@@ -71,27 +86,34 @@ namespace AtCSharp03
                 {
                     try
                     {
-                        while (sr.ReadLine() != null)
+                        string lerDados;
+                        while ((lerDados = sr.ReadLine()) != null)
                         {
-                            string lerDados = sr.ReadLine();
                             string[] dados = lerDados.Split(',');
-                            string tipo = dados[0];
-                            string titulo = dados[1];
-                            string autor = dados[2];
-                            int ano = int.Parse(dados[3]);
-                            bool disponivel = dados[4].ToString().ToLower() == "sim" ? true : false;
-                            
-                            if (tipo == "livro")
+                            if (dados.Length == 5)
                             {
-                                biblioteca.AdicionarItem(new Livro(titulo, autor, ano, disponivel));
-                                Console.WriteLine(tipo, titulo, autor, ano);
-                                Console.ReadKey();
+                                string tipo = dados[0];
+                                string titulo = dados[1];
+                                string autor = dados[2];
+                                int ano = int.Parse(dados[3]);
+                                bool disponivel = dados[4].ToLower() == "sim";
+
+                                if (tipo == "livro")
+                                {
+                                    biblioteca.AdicionarItem(new Livro(titulo, autor, ano, disponivel));
+                                    Console.WriteLine($"{tipo}, {titulo}, {autor}, {ano}");
+                                }
+                                else if (tipo == "revista")
+                                {
+                                    biblioteca.AdicionarItem(new Revista(titulo, autor, ano, disponivel));
+                                }
                             }
                             else
                             {
-                                biblioteca.AdicionarItem(new Revista(titulo, autor, ano, disponivel));
+                                Console.WriteLine($"Linha inválida: {lerDados}");
                             }
                         }
+
                         Console.Clear();
                         Console.WriteLine("Dados carregados com sucesso! Pressione qualquer tecla para continuar.");
                         Console.ReadKey();
@@ -104,29 +126,6 @@ namespace AtCSharp03
                 }
             }
         }
-
-        static void SalvarDadosEmCsv (Biblioteca biblioteca, string path)
-        {
-            // salvar dados antes de finalizar
-            using (StreamWriter sw = new StreamWriter(path))
-            {
-                try
-                {
-                    foreach(ItemBiblioteca item in biblioteca.Itens)
-                    {
-                        sw.WriteLine(item.FormatarParaSalvar());
-                        Console.Clear();
-                        Console.WriteLine("Os dados foram salvos.");
-                        Console.ReadKey();
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"Erro: {e.Message}. Tente novamente mais tarde");
-                }
-            }
-        }
-
         static int Menu ()
         {
             Console.Clear();
@@ -136,8 +135,7 @@ namespace AtCSharp03
             Console.WriteLine("3 - Remover Item");
             Console.WriteLine("4 - Realizar Emprestimo");
             Console.WriteLine("5 - Realizar Devolução");
-            Console.WriteLine("6 - Salvar dados");
-            Console.WriteLine("7 - Sair");
+            Console.WriteLine("6 - Sair");
             int op = 0;
             do{
                 try
@@ -149,7 +147,7 @@ namespace AtCSharp03
                     Console.WriteLine($"Você deve inserir o número de acordo com a opção.");
                     // Console.WriteLine("Sistema da Biblioteca\n1 - Exibir livros e revistas\n2 - Adicionar Item\n3 - Sair");
                 }
-            }while (op < 1 || op > 7);
+            }while (op < 1 || op > 6);
             return op;
         }
     }
