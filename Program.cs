@@ -52,14 +52,15 @@ namespace AtCSharp03
                     {
                         sw.WriteLine(item.FormatarParaSalvar());
                         Console.Clear();
-                        Console.WriteLine("Os dados foram salvos.");
-                        Console.ReadKey();
+                        Console.WriteLine("Salvando...");
                     }
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine($"Erro: {e.Message}. Tente novamente mais tarde");
                 }
+                Console.WriteLine("Os dados foram salvos.");
+                Console.ReadKey();
             }
         }
 

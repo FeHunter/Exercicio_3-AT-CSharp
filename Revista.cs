@@ -39,7 +39,7 @@ namespace AtCSharp03
 
         public override string FormatarParaSalvar()
         {
-            return $"{Tipo}, {Titulo}, {Autor}, {Ano}, {(!Emprestado ? "Sim" : "Não")}";
+            return $"{Tipo},{Titulo},{Autor},{Ano},{(!Emprestado ? "Sim" : "Não")}";
         }
 
         public override void VerificarDisponibilidade()
