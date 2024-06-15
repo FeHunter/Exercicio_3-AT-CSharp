@@ -17,6 +17,7 @@ namespace AtCSharp03
         {
             Console.WriteLine($"A revista {Titulo} foi emprestasdo.");
             Emprestado = true;
+            PrazoDevolucao = DateTime.Now.AddDays(7);
         }
 
         public override void ExibirInformacoes()
@@ -34,6 +35,11 @@ namespace AtCSharp03
             {
                 Console.WriteLine($"A revista {Titulo}, não esta disponivel.");
             }
+        }
+
+        public override void ObterPrazoDeDevolucao()
+        {
+            Console.WriteLine($"O prazo devolução é da revista {Titulo} é {PrazoDevolucao}");
         }
     }
 }

@@ -17,6 +17,7 @@ namespace AtCSharp03
         {
             Console.WriteLine($"O livero {Titulo} foi emprestasdo.");
             Emprestado = true;
+            PrazoDevolucao = DateTime.Now.AddDays(7);
         }
 
         public override void ExibirInformacoes()
@@ -34,6 +35,11 @@ namespace AtCSharp03
             {
                 Console.WriteLine($"O livro {Titulo}, não esta disponivel.");
             }
+        }
+
+        public override void ObterPrazoDeDevolucao()
+        {
+            Console.WriteLine($"O prazo devolução é do livro {Titulo} é {PrazoDevolucao}");
         }
     }
 }
