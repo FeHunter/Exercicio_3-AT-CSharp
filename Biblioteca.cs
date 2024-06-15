@@ -90,6 +90,7 @@ namespace AtCSharp03
             // Mostrar somente os livros
             if (op == 1)
             {
+                Console.Clear();
                 for (int i=0; i < Itens.Count; i++)
                 {
                     if (Itens[i].Tipo == "livro")
@@ -101,6 +102,7 @@ namespace AtCSharp03
             // Mostrar somente as revistas
             else if (op == 2)
             {
+                Console.Clear();
                 for (int i=0; i < Itens.Count; i++)
                 {
                     if (Itens[i].Tipo == "revista")
@@ -111,6 +113,7 @@ namespace AtCSharp03
             }
             // Mostrar todos os itens
             else {
+                Console.Clear();
                 foreach (ItemBiblioteca item in Itens)
                 {
                     Console.WriteLine(item.ExibirInformacoes());
