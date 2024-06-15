@@ -17,7 +17,13 @@ namespace AtCSharp03
             int op = 0;
             // Evitar entradas invalidas
             do {
-                op = int.Parse(Console.ReadLine());
+                try {
+                    op = int.Parse(Console.ReadLine());
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine("Você deve digitar um dos números das opções");   
+                }
             }while (op < 1 || op > 2);
             return op;
         }
@@ -27,6 +33,7 @@ namespace AtCSharp03
             int op = EscolherOpcoes();
             if (op == 1)
             {
+                Console.Clear();
                 Console.WriteLine("Adicionar Livro");
                 Console.Write("Titulo: ");
                 string titulo = Console.ReadLine();
@@ -40,6 +47,7 @@ namespace AtCSharp03
             }
             else if (op == 2)
             {
+                Console.Clear();
                 Console.WriteLine("Adicionar Revista");
                 Console.Write("Titulo: ");
                 string titulo = Console.ReadLine();
@@ -66,12 +74,49 @@ namespace AtCSharp03
         public void ExibirItens ()
         {
             Console.Clear();
-            foreach (ItemBiblioteca item in Itens)
+            Console.WriteLine("Lista de Livros e Revistas:\n");
+            int op = 0;
+            do {
+                Console.WriteLine("1 - Livros \n2 - Revistas \n3 - Todos");
+                try {
+                    op = int.Parse(Console.ReadLine());
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine("Você deve digitar um dos números das opções");   
+                }
+            } while( op < 1 || op > 3);
+
+            // Mostrar somente os livros
+            if (op == 1)
             {
-                Console.WriteLine(item.ExibirInformacoes());
+                for (int i=0; i < Itens.Count; i++)
+                {
+                    if (Itens[i].Tipo == "livro")
+                    {
+                        Console.WriteLine(Itens[i].ExibirInformacoes());
+                    }
+                }
+            }
+            // Mostrar somente as revistas
+            else if (op == 2)
+            {
+                for (int i=0; i < Itens.Count; i++)
+                {
+                    if (Itens[i].Tipo == "revista")
+                    {
+                        Console.WriteLine(Itens[i].ExibirInformacoes());
+                    }
+                }
+            }
+            // Mostrar todos os itens
+            else {
+                foreach (ItemBiblioteca item in Itens)
+                {
+                    Console.WriteLine(item.ExibirInformacoes());
+                }
             }
             Console.ReadKey();
-
         }
 
         public void RealizarEmprestimo (ItemBiblioteca item)

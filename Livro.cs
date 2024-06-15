@@ -5,6 +5,7 @@ namespace AtCSharp03
     {
         public Livro(string titulo, string autor, int ano) : base(titulo, autor, ano)
         {
+            Tipo = "livro";
         }
 
         public override void Devolver()
@@ -22,7 +23,7 @@ namespace AtCSharp03
 
         public override string ExibirInformacoes()
         {
-            return $"Título: {Titulo}, Autor: {Autor}, Ano de publicação: {Ano}";
+            return $"Livro: {Titulo} \nAutor: {Autor} \nAno de publicação: {Ano} \n";
         }
 
         public override void VerificarDisponibilidade()

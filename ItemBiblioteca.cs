@@ -7,7 +7,9 @@ namespace AtCSharp03
         private int _ano;
         private bool _emprestado;
         private DateTime _prazoDevolucao;
+        private string _tipo;
 
+        public string Tipo { get => _tipo; protected set => _tipo = value; }
         public string Titulo { get => _titulo; set => _titulo = value; }
         public string Autor { get => _autor; set => _autor = value; }
         public int Ano { get => _ano; set => _ano = value; }

@@ -36,8 +36,8 @@ namespace AtCSharp03
             List<ItemBiblioteca> itens = new List<ItemBiblioteca>() {
                 new Livro("Vanilla Sky", "Tom Cruise", 2001),
                 new Livro("O Conde de Monte Cristo", "Edmond Dante", 1983),
-                new Revista("Revista Monet", "Ellis", 2004),
-                new Revista("Revista Caras", "Pedro", 2009)
+                new Revista("Monet", "Ellis", 2004),
+                new Revista("Caras", "Pedro", 2009)
             };
             foreach (ItemBiblioteca item in itens)
             {
