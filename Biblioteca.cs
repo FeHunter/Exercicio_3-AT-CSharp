@@ -13,6 +13,7 @@ namespace AtCSharp03
             Console.WriteLine("1 - Adicionar Livro");
             Console.WriteLine("2 - Adicionar Revista");
             int op = 0;
+            // Evitar entradas invalidas
             do {
                 op = int.Parse(Console.ReadLine());
             }while (op < 1 || op > 2);
@@ -66,6 +67,11 @@ namespace AtCSharp03
             {
                 Console.WriteLine(item.ExibirInformacoes());
             }
+        }
+
+        public void RealizarEmprestimo (ItemBiblioteca item)
+        {
+            item.Emprestar();
         }
     }
 }

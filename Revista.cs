@@ -20,9 +20,9 @@ namespace AtCSharp03
             PrazoDevolucao = DateTime.Now.AddDays(7);
         }
 
-        public override void ExibirInformacoes()
+        public override string ExibirInformacoes()
         {
-            Console.WriteLine($"Título: {Titulo}, Autor: {Autor}, Ano de publicação: {Ano}");
+            return $"Título: {Titulo}, Autor: {Autor}, Ano de publicação: {Ano}";
         }
 
         public override void VerificarDisponibilidade()
