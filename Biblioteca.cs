@@ -54,5 +54,18 @@ namespace AtCSharp03
         {
             Itens.Add(item);
         }
+
+        public void RemoverItem (ItemBiblioteca item)
+        {
+            Itens.Remove(item);
+        }
+
+        public void ExibirItens ()
+        {
+            foreach (ItemBiblioteca item in Itens)
+            {
+                Console.WriteLine(item.ExibirInformacoes());
+            }
+        }
     }
 }

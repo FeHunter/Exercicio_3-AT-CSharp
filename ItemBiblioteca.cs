@@ -23,7 +23,7 @@ namespace AtCSharp03
 
         public abstract void Emprestar();
         public abstract void Devolver();
-        public abstract void ExibirInformacoes();
+        public abstract String ExibirInformacoes();
         public virtual void VerificarDisponibilidade() {}
         public virtual void ObterPrazoDeDevolucao() {}
     }
