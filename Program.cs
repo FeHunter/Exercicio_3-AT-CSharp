@@ -29,6 +29,10 @@ namespace AtCSharp03
                 }
                 else if (op == 4)
                 {
+                    biblioteca.MenuRealizarEmprestimo();
+                }
+                else if (op == 5)
+                {
                     fim = true;
                 }
             }
@@ -56,7 +60,8 @@ namespace AtCSharp03
             Console.WriteLine("1 - Exibir livros e revistas");
             Console.WriteLine("2 - Adicionar Item");
             Console.WriteLine("3 - Remover Item");
-            Console.WriteLine("4 - Sair");
+            Console.WriteLine("4 - Realizar Emprestimo");
+            Console.WriteLine("5 - Sair");
             int op = 0;
             do{
                 try
@@ -68,7 +73,7 @@ namespace AtCSharp03
                     Console.WriteLine($"Você deve inserir o número de acordo com a opção.");
                     // Console.WriteLine("Sistema da Biblioteca\n1 - Exibir livros e revistas\n2 - Adicionar Item\n3 - Sair");
                 }
-            }while (op < 1 || op > 4);
+            }while (op < 1 || op > 5);
             return op;
         }
     }

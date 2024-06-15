@@ -160,6 +160,44 @@ namespace AtCSharp03
             Console.ReadKey();
         }
 
+        public void MenuRealizarEmprestimo ()
+        {
+            // mostra lista
+            Console.Clear();
+            Console.WriteLine("Livros e Revistas disponiveis:\n");
+            foreach (ItemBiblioteca item in Itens)
+            {
+                // Mostra somente livros ou revistas disponiveis para empretismo
+                if (!item.Emprestado)
+                {
+                    Console.WriteLine(item.ExibirInformacoes());
+                }
+            }
+
+            Console.Write("\nDigite o livrou ou revista desejado: ");
+            string empresta = Console.ReadLine();
+            bool emprestado = false;
+
+            for (int i=0; i < Itens.Count; i++)
+            {
+                if (Itens[i].Titulo == empresta)
+                {
+                    Console.Clear();
+                    RealizarEmprestimo(Itens[i]);
+                    emprestado = true;
+                }
+            }
+
+            // aviso caso não localize o livro ou revista
+            if (!emprestado)
+            {
+                Console.Clear();
+                Console.WriteLine($"'{empresta}' não localizado, verifique e tente novamente.");
+            }
+
+            Console.ReadKey();
+        }
+
         public void RealizarEmprestimo (ItemBiblioteca item)
         {
             item.Emprestar();

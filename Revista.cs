@@ -16,14 +16,21 @@ namespace AtCSharp03
 
         public override void Emprestar()
         {
-            Console.WriteLine($"A revista {Titulo} foi emprestasdo.");
-            Emprestado = true;
-            PrazoDevolucao = DateTime.Now.AddDays(7);
+            if (!Emprestado)
+            {
+                Emprestado = true;
+                PrazoDevolucao = DateTime.Now.AddDays(7);
+                Console.WriteLine($"A revista '{Titulo}' foi emprestasdo, prazo para devolução {PrazoDevolucao}.");
+            }
+            else 
+            {
+                Console.WriteLine($"A revista '{Titulo}' não esta disponivel, será devolvido até {PrazoDevolucao}.");
+            }
         }
 
         public override string ExibirInformacoes()
         {
-            return $"Revista: {Titulo} \nAutor: {Autor} \nAno de publicação: {Ano} \n Disponivel: {(!Emprestado ? "Sim" : "Não")}";
+            return $"Revista: {Titulo} \nAutor: {Autor} \nAno de publicação: {Ano} \nDisponivel: {(!Emprestado ? "Sim" : "Não")} \n";
         }
 
         public override void VerificarDisponibilidade()
