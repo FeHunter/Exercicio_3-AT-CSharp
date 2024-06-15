@@ -1,0 +1,15 @@
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\bin\Debug\net8.0\Exercicio_3-AT-CSharp.exe
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\bin\Debug\net8.0\Exercicio_3-AT-CSharp.deps.json
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\bin\Debug\net8.0\Exercicio_3-AT-CSharp.runtimeconfig.json
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\bin\Debug\net8.0\Exercicio_3-AT-CSharp.dll
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\bin\Debug\net8.0\Exercicio_3-AT-CSharp.pdb
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\obj\Debug\net8.0\Exercicio_3-AT-CSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\obj\Debug\net8.0\Exercicio_3-AT-CSharp.AssemblyInfoInputs.cache
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\obj\Debug\net8.0\Exercicio_3-AT-CSharp.AssemblyInfo.cs
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\obj\Debug\net8.0\Exercicio_3-AT-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\obj\Debug\net8.0\Exercicio_3-AT-CSharp.sourcelink.json
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\obj\Debug\net8.0\Exercicio_3-AT-CSharp.dll
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\obj\Debug\net8.0\refint\Exercicio_3-AT-CSharp.dll
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\obj\Debug\net8.0\Exercicio_3-AT-CSharp.pdb
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\obj\Debug\net8.0\Exercicio_3-AT-CSharp.genruntimeconfig.cache
+C:\Users\hunte\Documents\Programmer\Estudos\Faculdade\Back-End\C#\AT\Exercicio_3-AT-CSharp\obj\Debug\net8.0\ref\Exercicio_3-AT-CSharp.dll

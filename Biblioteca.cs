@@ -10,8 +10,10 @@ namespace AtCSharp03
 
         public int EscolherOpcoes ()
         {
-            Console.WriteLine("1 - Adicionar Livro");
-            Console.WriteLine("2 - Adicionar Revista");
+            Console.Clear();
+            Console.WriteLine("Escolha o que deseja adicionar:");
+            Console.WriteLine("1 - Livro");
+            Console.WriteLine("2 - Revista");
             int op = 0;
             // Evitar entradas invalidas
             do {
@@ -63,10 +65,13 @@ namespace AtCSharp03
 
         public void ExibirItens ()
         {
+            Console.Clear();
             foreach (ItemBiblioteca item in Itens)
             {
                 Console.WriteLine(item.ExibirInformacoes());
             }
+            Console.ReadKey();
+
         }
 
         public void RealizarEmprestimo (ItemBiblioteca item)
