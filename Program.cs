@@ -60,7 +60,6 @@ namespace AtCSharp03
                     Console.WriteLine($"Erro: {e.Message}. Tente novamente mais tarde");
                 }
                 Console.WriteLine("Os dados foram salvos.");
-                Console.ReadKey();
             }
         }
 
