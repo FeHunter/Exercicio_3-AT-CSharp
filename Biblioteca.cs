@@ -66,6 +66,44 @@ namespace AtCSharp03
             Itens.Add(item);
         }
 
+        public void MenuRemoverItem ()
+        {
+            Console.Clear();
+
+            // mostra lista
+            foreach (ItemBiblioteca item in Itens)
+            {
+                Console.WriteLine(item.ExibirInformacoes());
+            }
+
+            // Mensagem de como funciona
+            Console.WriteLine("Digite o nome do livro ou revista a ser removido");
+            Console.Write("Nome: ");
+            string removeItem = Console.ReadLine();
+            bool removido = false;
+
+            // Procuar item na lista
+            for (int i=0; i < Itens.Count; i++)
+            {
+                if (Itens[i].Titulo == removeItem)
+                {
+                    Console.Clear();
+                    Console.WriteLine($"'{Itens[i].Titulo}' foi removido da lista.");
+                    Itens.Remove(Itens[i]);
+                    removido = true;
+                }
+            }
+
+            // mostra aviso caso item não seja encontrado
+            if (!removido)
+            {
+                Console.Clear();
+                Console.WriteLine($"Não foi possivel localizar '{removeItem}', verifique se não foi digitado algo errado e tente novamente");
+            }
+
+            Console.ReadKey();
+        }
+
         public void RemoverItem (ItemBiblioteca item)
         {
             Itens.Remove(item);
