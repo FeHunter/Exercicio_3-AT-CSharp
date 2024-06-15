@@ -85,7 +85,7 @@ namespace AtCSharp03
             // Procuar item na lista
             for (int i=0; i < Itens.Count; i++)
             {
-                if (Itens[i].Titulo == removeItem)
+                if (Itens[i].Titulo.ToLower() == removeItem.ToLower())
                 {
                     Console.Clear();
                     Console.WriteLine($"'{Itens[i].Titulo}' foi removido da lista.");
