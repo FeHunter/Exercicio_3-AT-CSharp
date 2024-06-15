@@ -5,10 +5,23 @@ namespace AtCSharp03
         private string _titulo;
         private string _autor;
         private int _ano;
+        private bool _emprestado;
+        private DateTime _prazoDevolucao;
 
         public string Titulo { get => _titulo; set => _titulo = value; }
         public string Autor { get => _autor; set => _autor = value; }
         public int Ano { get => _ano; set => _ano = value; }
+        public bool Emprestado { get => _emprestado; set => _emprestado = value; }
+        public DateTime PrazoDevolucao { get => _prazoDevolucao; set => _prazoDevolucao = value; }
+
+        public ItemBiblioteca(string titulo, string autor, int ano, bool emprestado, DateTime prazoDevolucao)
+        {
+            Titulo = titulo;
+            Autor = autor;
+            Ano = ano;
+            Emprestado = emprestado;
+            PrazoDevolucao = prazoDevolucao;
+        }
 
         public abstract void Emprestar();
         public abstract void Devolver();
